@@ -59,6 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Varaus.cs" />
+    <Compile Include="Palvelu.cs" />
+    <Compile Include="Toimipiste.cs" />
+    <Compile Include="Asiakas.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +83,24 @@
     <Compile Include="Palvelut_UserControl.Designer.cs">
       <DependentUpon>Palvelut_UserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="toimipisteet_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toimipisteet_UserControl.Designer.cs">
+      <DependentUpon>toimipisteet_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uusi_varaus_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uusi_varaus_UserControl.Designer.cs">
+      <DependentUpon>Uusi_varaus_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Varaukset_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Varaukset_UserControl.Designer.cs">
+      <DependentUpon>Varaukset_UserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="VP_database_api.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -97,6 +119,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Palvelut_UserControl.resx">
       <DependentUpon>Palvelut_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toimipisteet_UserControl.resx">
+      <DependentUpon>toimipisteet_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uusi_varaus_UserControl.resx">
+      <DependentUpon>Uusi_varaus_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Varaukset_UserControl.resx">
+      <DependentUpon>Varaukset_UserControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

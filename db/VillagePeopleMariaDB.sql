@@ -4,7 +4,7 @@ create database vp;
 use vp; 
 
 CREATE TABLE Toimipiste (
-	toimipiste_id INT PRIMARY KEY,
+	toimipiste_id INT AUTO_INCREMENT PRIMARY KEY,
 	nimi VARCHAR (40),
 	lahiosoite VARCHAR (40),
 	postitoimipaikka VARCHAR (30),
@@ -21,7 +21,7 @@ CREATE TABLE Asiakas (
 	email VARCHAR (50),
 	puhelinnro VARCHAR (15));
 CREATE TABLE Varaus (
-	varaus_id INT PRIMARY KEY,
+	varaus_id INT AUTO_INCREMENT PRIMARY KEY,
 	asiakas_id INT,
 	toimipiste_id INT,
 	varattu_pvm DATETIME,
@@ -45,10 +45,10 @@ CREATE TABLE Lasku (
 	FOREIGN KEY (asiakas_id) REFERENCES Asiakas (asiakas_id) ON DELETE CASCADE
  	);
 CREATE TABLE Palvelu (
-	palvelu_id INT PRIMARY KEY,
+	palvelu_id INT AUTO_INCREMENT PRIMARY KEY,
 	toimipiste_id INT,
 	nimi VARCHAR (40),
-	tyyppi INT,
+	toimipistetyyppi INT,
 	kuvaus VARCHAR (255),
 	hinta DOUBLE (8,2) NOT NULL,
 	alv DOUBLE (8,2) NOT NULL,

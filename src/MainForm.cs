@@ -17,6 +17,9 @@ namespace kokeilu
 
         private Asiakkaat_UserControl uc1;
         private Palvelut_UserControl uc2;
+        private toimipisteet_UserControl uc3;
+        private Varaukset_UserControl uc4;
+
         private VP_database_api db;
 
         public MainForm()
@@ -25,14 +28,21 @@ namespace kokeilu
             InitializeComponent();
             Connection = new MySqlConnection("host=127.0.0.1;port=3306;user id=root;password=root;database=vp;");
             uc1 = new Asiakkaat_UserControl(db);
-            uc2 = new Palvelut_UserControl();
+            uc2 = new Palvelut_UserControl(db);
+            uc3 = new toimipisteet_UserControl(db);
+            uc4 = new Varaukset_UserControl(db, näkymät_panel);
+            
+            
+
            // IsMdiContainer = true;
             //dataGridView1.Visible = false;
         }
 
         private void toimipisteet_button_click(object sender, EventArgs e)
         {
-           //todo
+            näkymät_panel.Controls.Clear();
+
+            näkymät_panel.Controls.Add(uc3);
         }
       
         private void asiakkaat_button_click(object sender, EventArgs e)
@@ -53,7 +63,9 @@ namespace kokeilu
 
         private void varaukset_button_click(object sender, EventArgs e)
         {
-            //todo
+            näkymät_panel.Controls.Clear();
+
+            näkymät_panel.Controls.Add(uc4);   
         }
     }
 }
