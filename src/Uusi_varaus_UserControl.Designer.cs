@@ -1,4 +1,4 @@
-﻿namespace kokeilu
+﻿namespace VillagePeople
 {
     partial class Uusi_varaus_UserControl
     {
@@ -190,6 +190,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lisää_palvelu_button);
             this.groupBox1.Controls.Add(this.dateTimePicker1);

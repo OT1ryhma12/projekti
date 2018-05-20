@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace kokeilu.Properties
+namespace VillagePeople.Properties
 {
 
 

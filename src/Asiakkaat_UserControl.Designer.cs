@@ -1,4 +1,4 @@
-﻿namespace kokeilu
+﻿namespace VillagePeople
 {
     partial class Asiakkaat_UserControl
     {
@@ -55,9 +55,9 @@
             // 
             this.Lisää_asiakas_button.BackColor = System.Drawing.SystemColors.Control;
             this.Lisää_asiakas_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Lisää_asiakas_button.Location = new System.Drawing.Point(17, 209);
+            this.Lisää_asiakas_button.Location = new System.Drawing.Point(35, 451);
             this.Lisää_asiakas_button.Name = "Lisää_asiakas_button";
-            this.Lisää_asiakas_button.Size = new System.Drawing.Size(155, 86);
+            this.Lisää_asiakas_button.Size = new System.Drawing.Size(292, 66);
             this.Lisää_asiakas_button.TabIndex = 0;
             this.Lisää_asiakas_button.Text = "Lisää uusi \r\n  asiakas";
             this.Lisää_asiakas_button.UseVisualStyleBackColor = false;
@@ -66,62 +66,69 @@
             // asiakkaat_dataGridView
             // 
             this.asiakkaat_dataGridView.AllowUserToAddRows = false;
+            this.asiakkaat_dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.asiakkaat_dataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.asiakkaat_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.asiakkaat_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.asiakkaat_dataGridView.Location = new System.Drawing.Point(193, 38);
+            this.asiakkaat_dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.asiakkaat_dataGridView.Location = new System.Drawing.Point(351, 38);
             this.asiakkaat_dataGridView.MultiSelect = false;
             this.asiakkaat_dataGridView.Name = "asiakkaat_dataGridView";
             this.asiakkaat_dataGridView.RowTemplate.Height = 28;
             this.asiakkaat_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.asiakkaat_dataGridView.Size = new System.Drawing.Size(751, 407);
+            this.asiakkaat_dataGridView.Size = new System.Drawing.Size(664, 587);
             this.asiakkaat_dataGridView.TabIndex = 5;
             this.asiakkaat_dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.asiakkaat_dataGridView_CellClick);
             // 
             // etunimi_textbox
             // 
-            this.etunimi_textbox.Location = new System.Drawing.Point(226, 481);
+            this.etunimi_textbox.Location = new System.Drawing.Point(146, 49);
             this.etunimi_textbox.Name = "etunimi_textbox";
-            this.etunimi_textbox.Size = new System.Drawing.Size(100, 26);
+            this.etunimi_textbox.Size = new System.Drawing.Size(169, 26);
             this.etunimi_textbox.TabIndex = 6;
             // 
             // etunimi_label
             // 
             this.etunimi_label.AutoSize = true;
-            this.etunimi_label.Location = new System.Drawing.Point(149, 484);
+            this.etunimi_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.etunimi_label.Location = new System.Drawing.Point(31, 52);
             this.etunimi_label.Name = "etunimi_label";
-            this.etunimi_label.Size = new System.Drawing.Size(62, 20);
+            this.etunimi_label.Size = new System.Drawing.Size(69, 20);
             this.etunimi_label.TabIndex = 7;
             this.etunimi_label.Text = "Etunimi";
             // 
             // sukunimi_label
             // 
             this.sukunimi_label.AutoSize = true;
-            this.sukunimi_label.Location = new System.Drawing.Point(370, 484);
+            this.sukunimi_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sukunimi_label.Location = new System.Drawing.Point(31, 116);
             this.sukunimi_label.Name = "sukunimi_label";
-            this.sukunimi_label.Size = new System.Drawing.Size(74, 20);
+            this.sukunimi_label.Size = new System.Drawing.Size(82, 20);
             this.sukunimi_label.TabIndex = 8;
             this.sukunimi_label.Text = "Sukunimi";
             // 
             // sukunimi_textbox
             // 
-            this.sukunimi_textbox.Location = new System.Drawing.Point(472, 481);
+            this.sukunimi_textbox.Location = new System.Drawing.Point(146, 110);
             this.sukunimi_textbox.Name = "sukunimi_textbox";
-            this.sukunimi_textbox.Size = new System.Drawing.Size(100, 26);
+            this.sukunimi_textbox.Size = new System.Drawing.Size(169, 26);
             this.sukunimi_textbox.TabIndex = 9;
             // 
             // osoite_textbox
             // 
-            this.osoite_textbox.Location = new System.Drawing.Point(703, 481);
+            this.osoite_textbox.Location = new System.Drawing.Point(146, 162);
             this.osoite_textbox.Name = "osoite_textbox";
-            this.osoite_textbox.Size = new System.Drawing.Size(100, 26);
+            this.osoite_textbox.Size = new System.Drawing.Size(169, 26);
             this.osoite_textbox.TabIndex = 10;
             // 
             // osoite_label
             // 
             this.osoite_label.AutoSize = true;
-            this.osoite_label.Location = new System.Drawing.Point(617, 484);
+            this.osoite_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.osoite_label.Location = new System.Drawing.Point(31, 165);
             this.osoite_label.Name = "osoite_label";
-            this.osoite_label.Size = new System.Drawing.Size(55, 20);
+            this.osoite_label.Size = new System.Drawing.Size(61, 20);
             this.osoite_label.TabIndex = 11;
             this.osoite_label.Text = "Osoite";
             // 
@@ -130,9 +137,9 @@
             this.poista_asiakas_button.AutoSize = true;
             this.poista_asiakas_button.BackColor = System.Drawing.SystemColors.Control;
             this.poista_asiakas_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.poista_asiakas_button.Location = new System.Drawing.Point(17, 99);
+            this.poista_asiakas_button.Location = new System.Drawing.Point(35, 536);
             this.poista_asiakas_button.Name = "poista_asiakas_button";
-            this.poista_asiakas_button.Size = new System.Drawing.Size(155, 58);
+            this.poista_asiakas_button.Size = new System.Drawing.Size(292, 41);
             this.poista_asiakas_button.TabIndex = 12;
             this.poista_asiakas_button.Text = "Poista asiakas";
             this.poista_asiakas_button.UseVisualStyleBackColor = false;
@@ -143,9 +150,9 @@
             this.päivitä_button.AutoSize = true;
             this.päivitä_button.BackColor = System.Drawing.SystemColors.Control;
             this.päivitä_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.päivitä_button.Location = new System.Drawing.Point(17, 343);
+            this.päivitä_button.Location = new System.Drawing.Point(35, 590);
             this.päivitä_button.Name = "päivitä_button";
-            this.päivitä_button.Size = new System.Drawing.Size(155, 58);
+            this.päivitä_button.Size = new System.Drawing.Size(292, 35);
             this.päivitä_button.TabIndex = 13;
             this.päivitä_button.Text = "Päivitä";
             this.päivitä_button.UseVisualStyleBackColor = false;
@@ -154,72 +161,76 @@
             // postitoimipaikka_label
             // 
             this.postitoimipaikka_label.AutoSize = true;
-            this.postitoimipaikka_label.Location = new System.Drawing.Point(826, 474);
+            this.postitoimipaikka_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.postitoimipaikka_label.Location = new System.Drawing.Point(31, 207);
             this.postitoimipaikka_label.Name = "postitoimipaikka_label";
-            this.postitoimipaikka_label.Size = new System.Drawing.Size(82, 40);
+            this.postitoimipaikka_label.Size = new System.Drawing.Size(93, 40);
             this.postitoimipaikka_label.TabIndex = 14;
             this.postitoimipaikka_label.Text = "Postitoimi-\r\npaikka";
             // 
             // postitoimipaikka_textbox
             // 
-            this.postitoimipaikka_textbox.Location = new System.Drawing.Point(927, 478);
+            this.postitoimipaikka_textbox.Location = new System.Drawing.Point(146, 221);
             this.postitoimipaikka_textbox.Name = "postitoimipaikka_textbox";
-            this.postitoimipaikka_textbox.Size = new System.Drawing.Size(100, 26);
+            this.postitoimipaikka_textbox.Size = new System.Drawing.Size(169, 26);
             this.postitoimipaikka_textbox.TabIndex = 15;
             // 
             // postinumero_label
             // 
             this.postinumero_label.AutoSize = true;
-            this.postinumero_label.Location = new System.Drawing.Point(113, 541);
+            this.postinumero_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.postinumero_label.Location = new System.Drawing.Point(31, 276);
             this.postinumero_label.Name = "postinumero_label";
-            this.postinumero_label.Size = new System.Drawing.Size(98, 20);
+            this.postinumero_label.Size = new System.Drawing.Size(109, 20);
             this.postinumero_label.TabIndex = 16;
             this.postinumero_label.Text = "Postinumero";
             // 
             // postinumero_textbox
             // 
-            this.postinumero_textbox.Location = new System.Drawing.Point(226, 541);
+            this.postinumero_textbox.Location = new System.Drawing.Point(146, 276);
             this.postinumero_textbox.Name = "postinumero_textbox";
-            this.postinumero_textbox.Size = new System.Drawing.Size(100, 26);
+            this.postinumero_textbox.Size = new System.Drawing.Size(169, 26);
             this.postinumero_textbox.TabIndex = 17;
             // 
             // email_label
             // 
             this.email_label.AutoSize = true;
-            this.email_label.Location = new System.Drawing.Point(398, 541);
+            this.email_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_label.Location = new System.Drawing.Point(31, 338);
             this.email_label.Name = "email_label";
-            this.email_label.Size = new System.Drawing.Size(46, 20);
+            this.email_label.Size = new System.Drawing.Size(51, 20);
             this.email_label.TabIndex = 18;
             this.email_label.Text = "email";
             // 
             // email_textbox
             // 
-            this.email_textbox.Location = new System.Drawing.Point(472, 541);
+            this.email_textbox.Location = new System.Drawing.Point(146, 338);
             this.email_textbox.Name = "email_textbox";
-            this.email_textbox.Size = new System.Drawing.Size(100, 26);
+            this.email_textbox.Size = new System.Drawing.Size(169, 26);
             this.email_textbox.TabIndex = 19;
             // 
             // puhelinnro_label
             // 
             this.puhelinnro_label.AutoSize = true;
-            this.puhelinnro_label.Location = new System.Drawing.Point(589, 541);
+            this.puhelinnro_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.puhelinnro_label.Location = new System.Drawing.Point(31, 400);
             this.puhelinnro_label.Name = "puhelinnro_label";
-            this.puhelinnro_label.Size = new System.Drawing.Size(83, 20);
+            this.puhelinnro_label.Size = new System.Drawing.Size(93, 20);
             this.puhelinnro_label.TabIndex = 20;
             this.puhelinnro_label.Text = "puhelinnro";
             // 
             // puhelinnro_textbox
             // 
-            this.puhelinnro_textbox.Location = new System.Drawing.Point(703, 541);
+            this.puhelinnro_textbox.Location = new System.Drawing.Point(146, 400);
             this.puhelinnro_textbox.Name = "puhelinnro_textbox";
-            this.puhelinnro_textbox.Size = new System.Drawing.Size(100, 26);
+            this.puhelinnro_textbox.Size = new System.Drawing.Size(169, 26);
             this.puhelinnro_textbox.TabIndex = 21;
             // 
             // tallenna_button
             // 
             this.tallenna_button.BackColor = System.Drawing.SystemColors.Control;
             this.tallenna_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tallenna_button.Location = new System.Drawing.Point(374, 613);
+            this.tallenna_button.Location = new System.Drawing.Point(332, 679);
             this.tallenna_button.Name = "tallenna_button";
             this.tallenna_button.Size = new System.Drawing.Size(155, 58);
             this.tallenna_button.TabIndex = 22;
@@ -231,7 +242,7 @@
             // 
             this.peruuta_button.BackColor = System.Drawing.SystemColors.Control;
             this.peruuta_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.peruuta_button.Location = new System.Drawing.Point(621, 613);
+            this.peruuta_button.Location = new System.Drawing.Point(628, 679);
             this.peruuta_button.Name = "peruuta_button";
             this.peruuta_button.Size = new System.Drawing.Size(155, 58);
             this.peruuta_button.TabIndex = 23;
@@ -243,6 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Controls.Add(this.peruuta_button);
             this.Controls.Add(this.tallenna_button);
             this.Controls.Add(this.puhelinnro_textbox);
@@ -264,7 +276,7 @@
             this.Controls.Add(this.asiakkaat_dataGridView);
             this.Controls.Add(this.Lisää_asiakas_button);
             this.Name = "Asiakkaat_UserControl";
-            this.Size = new System.Drawing.Size(1039, 700);
+            this.Size = new System.Drawing.Size(1039, 755);
             this.Load += new System.EventHandler(this.asiakkaat_UserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.asiakkaat_dataGridView)).EndInit();
             this.ResumeLayout(false);

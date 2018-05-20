@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace kokeilu
+namespace VillagePeople
 {
     public partial class MainForm : Form
     {
@@ -19,7 +19,7 @@ namespace kokeilu
         private Palvelut_UserControl uc2;
         private toimipisteet_UserControl uc3;
         private Varaukset_UserControl uc4;
-
+        private Laskut_UserControl uc5;
         private VP_database_api db;
 
         public MainForm()
@@ -31,10 +31,16 @@ namespace kokeilu
             uc2 = new Palvelut_UserControl(db);
             uc3 = new toimipisteet_UserControl(db);
             uc4 = new Varaukset_UserControl(db, näkymät_panel);
-            
-            
+            uc5 = new Laskut_UserControl(db);
+            uc1.Dock = DockStyle.Fill;
+            uc2.Dock = DockStyle.Fill;
+            uc3.Dock = DockStyle.Fill;
+            uc4.Dock = DockStyle.Fill;
+            uc5.Dock = DockStyle.Fill;
 
-           // IsMdiContainer = true;
+
+
+            // IsMdiContainer = true;
             //dataGridView1.Visible = false;
         }
 
@@ -66,6 +72,14 @@ namespace kokeilu
             näkymät_panel.Controls.Clear();
 
             näkymät_panel.Controls.Add(uc4);   
+        }
+
+        private void laskut_button_Click(object sender, EventArgs e)
+        {
+            näkymät_panel.Controls.Clear();
+
+            näkymät_panel.Controls.Add(uc5);
+            uc5.PäivitäNäkymä();
         }
     }
 }

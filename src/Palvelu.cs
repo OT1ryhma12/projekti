@@ -1,4 +1,4 @@
-﻿namespace kokeilu
+﻿namespace VillagePeople
 {
     public class Palvelu
     {

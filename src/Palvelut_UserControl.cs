@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace kokeilu
+namespace VillagePeople
 {
     public partial class Palvelut_UserControl : UserControl
     {
@@ -73,6 +73,7 @@ namespace kokeilu
             tallenna_button.Enabled = false;
             peruuta_button.Enabled = false;
             Lisää_toimipiste_button.Enabled = true;
+
         }
 
         private void poista_palvelu_button_Click(object sender, EventArgs e)

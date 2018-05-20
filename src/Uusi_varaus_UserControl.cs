@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace kokeilu
+namespace VillagePeople
 {
     public partial class Uusi_varaus_UserControl : UserControl
     {
@@ -59,14 +59,30 @@ namespace kokeilu
                 }
 
             }
-
             db.LisääVarauksenPalvelut(id, lista);
+
+            double summa = Math.Round(LaskePalveluidenSumma(lista),2);
+            double alv = Math.Round(summa * 0.24, 2);
+
+            db.LisääLasku(id, asiakas_id, summa, alv);
+
             varaukset_uc.päivitä_näkymä();
             panel.Controls.Clear();
             panel.Controls.Add(varaukset_uc);
            
 
 
+        }
+
+        private double LaskePalveluidenSumma(List<Palvelu> lista)
+        {
+            double summa = 0;
+            foreach(Palvelu p in lista)
+            {
+                summa += p.Hinta;
+            }
+
+            return summa;
         }
 
         private void lisää_palvelu_button_click(object sender, EventArgs e)

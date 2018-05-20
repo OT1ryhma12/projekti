@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace kokeilu
+namespace VillagePeople
 {
     public partial class Varaukset_UserControl : UserControl
     {

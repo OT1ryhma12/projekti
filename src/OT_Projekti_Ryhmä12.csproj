@@ -59,6 +59,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Laskut_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Laskut_UserControl.Designer.cs">
+      <DependentUpon>Laskut_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lasku.cs" />
     <Compile Include="Varaus.cs" />
     <Compile Include="Palvelu.cs" />
     <Compile Include="Toimipiste.cs" />
@@ -102,6 +109,9 @@
       <DependentUpon>Varaukset_UserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="VP_database_api.cs" />
+    <EmbeddedResource Include="Laskut_UserControl.resx">
+      <DependentUpon>Laskut_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -32,7 +32,7 @@ CREATE TABLE Varaus (
 	FOREIGN KEY (asiakas_id) REFERENCES Asiakas (asiakas_id) ON DELETE CASCADE
 );
 CREATE TABLE Lasku (
-	lasku_id INT PRIMARY KEY,
+	lasku_id INT AUTO_INCREMENT PRIMARY KEY,
 	varaus_id INT,
 	asiakas_id INT,
 	nimi VARCHAR (60),
@@ -40,7 +40,7 @@ CREATE TABLE Lasku (
 	postitoimipaikka VARCHAR (30),
 	postinro CHAR (5),
 	summa DOUBLE (8,2) NOT NULL,
-	alv DOUBLE (8,2) NOT NULL,
+	alv DOUBLE (8, 13) NOT NULL,
 	FOREIGN KEY (varaus_id) REFERENCES Varaus (varaus_id) ON DELETE CASCADE,
 	FOREIGN KEY (asiakas_id) REFERENCES Asiakas (asiakas_id) ON DELETE CASCADE
  	);

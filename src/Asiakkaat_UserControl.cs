@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace kokeilu
+namespace VillagePeople
 {
     public partial class Asiakkaat_UserControl : UserControl
     {

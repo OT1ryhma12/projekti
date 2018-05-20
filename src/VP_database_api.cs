@@ -2,9 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Windows.Forms;
 
-namespace kokeilu
+namespace VillagePeople
 {
     public class VP_database_api
     {
@@ -485,7 +486,7 @@ namespace kokeilu
                     string etunimi = reader.GetString("etunimi");
                     string sukunimi = reader.GetString("sukunimi");
                     string lahiosoite = reader.GetString("lahiosoite");
-                    string asiakkaan_postitoimipaikka = reader.GetString("Toimipiste");
+                    string asiakkaan_postitoimipaikka = reader.GetString("postitoimipaikka");
                     string asiakkaan_postinro = reader.GetString("postinro");
                     string asiakkaan_email = reader.GetString("email");
                     string asiakkaan_puhelinnro = reader.GetString("puhelinnro");
@@ -539,6 +540,163 @@ namespace kokeilu
             }
             Connection.Close();
             return id;
+
+        }
+
+        public List<Lasku> LataaLaskut()
+        {
+            string Query = "select Lasku.lasku_id, Lasku.summa, lasku.alv, Varaus.varaus_id, Varaus.varattu_pvm, Varaus.vahvistus_pvm, Varaus.varattu_alkupvm, Varaus.varattu_loppupvm, Asiakas.asiakas_id, Asiakas.etunimi, Asiakas.sukunimi, Asiakas.lahiosoite, Asiakas.postitoimipaikka, Asiakas.postinro, Asiakas.email, Asiakas.puhelinnro" +
+                " from Lasku" +
+                " inner join Varaus on Lasku.varaus_id = Varaus.varaus_id" +
+                " inner join Asiakas on Lasku.asiakas_id = Asiakas.asiakas_id;";
+            MySqlCommand cmdDataBase = new MySqlCommand(Query, Connection);
+            MySqlDataReader reader;
+            List<Lasku> laskut = new List<Lasku>();
+            try
+            {
+                Connection.Open();
+                reader = cmdDataBase.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+
+                    int lasku_id = reader.GetInt32("lasku_id");
+                    double summa = reader.GetDouble("summa");
+                    double alv = reader.GetDouble("alv");
+                    int varaus_id = reader.GetInt32("varaus_id");
+                    DateTime varattu_pvm = reader.GetDateTime("varattu_pvm");
+                    DateTime vahvistus_pvm = reader.GetDateTime("vahvistus_pvm");
+                    DateTime varattu_alkupvm = reader.GetDateTime("varattu_alkupvm");
+                    DateTime varattu_loppupvm = reader.GetDateTime("varattu_loppupvm");
+                    int asiakas_id = reader.GetInt32("asiakas_id");
+                    string etunimi = reader.GetString("etunimi");
+                    string sukunimi = reader.GetString("sukunimi");
+                    string lahiosoite = reader.GetString("lahiosoite");
+                    string asiakkaan_postitoimipaikka = reader.GetString("Postitoimipaikka");
+                    string asiakkaan_postinro = reader.GetString("postinro");
+                    string asiakkaan_email = reader.GetString("email");
+                    string asiakkaan_puhelinnro = reader.GetString("puhelinnro");
+
+
+
+
+                    Lasku l = new Lasku(lasku_id, summa, alv);
+                    Asiakas a = new Asiakas(asiakas_id, etunimi, sukunimi, lahiosoite, asiakkaan_postitoimipaikka, asiakkaan_postinro, asiakkaan_email, asiakkaan_puhelinnro);
+                    Varaus v = new Varaus(varaus_id, varattu_pvm, vahvistus_pvm, varattu_alkupvm, varattu_loppupvm);
+                    l.Asiakas = a;
+                    l.Varaus = v;
+
+
+                    laskut.Add(l);
+                    
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Connection.Close();
+            return laskut;
+        }
+
+      /*  public void LataaLasku(DataGridView dataGridView)
+        {
+            Connection.Open();
+            var cmd = Connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Select * From Lasku;";
+            cmd.ExecuteNonQuery();
+            var adap = new MySqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adap.Fill(ds);
+            dataGridView.Visible = true;
+            dataGridView.DataSource = ds.Tables[0].DefaultView;
+            Connection.Close();
+
+        }*/
+
+        /*public void LisääLasku(string nimi, string osoite, string postitoimipaikka, DataGridView dataGridView)
+        {
+            string Query = "insert into Lasku (nimi, lahiosoite, postitoimipaikka) values ('" + nimi + "',  '" + osoite + "', '" + postitoimipaikka + "')";
+            MySqlCommand cmdDataBase = new MySqlCommand(Query, Connection);
+            MySqlDataReader reader;
+            try
+            {
+                Connection.Open();
+                reader = cmdDataBase.ExecuteReader();
+                MessageBox.Show("Lasku on lisätty");
+
+                while (reader.Read())
+                {
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Connection.Close();
+
+        }*/
+
+        public void LisääLasku(int varaus_id, int asiakas_id, double summa, double alv)
+        {
+
+            string s = summa.ToString(CultureInfo.InvariantCulture);
+            string a = alv.ToString(CultureInfo.InvariantCulture);
+
+            string Query = String.Format("insert into Lasku (varaus_id, asiakas_id, summa, alv) values ('{0}',  '{1}', '{2}', '{3}')", varaus_id, asiakas_id, s, a);
+            MySqlCommand cmdDataBase = new MySqlCommand(Query, Connection);
+            try
+            {
+                Connection.Open();
+                cmdDataBase.ExecuteNonQuery();
+                //MessageBox.Show("Lasku lisätty");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Connection.Close();
+
+        }
+
+        public void PoistaLasku(DataGridView dataGridView)
+        {
+            int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
+            string Query = "delete from Lasku where lasku_id=" + id + " ;";
+            MySqlCommand cmdDataBase = new MySqlCommand(Query, Connection);
+            MySqlDataReader reader;
+
+            foreach (DataGridViewRow item in dataGridView.SelectedRows)
+            {
+                dataGridView.Rows.RemoveAt(item.Index);
+            }
+
+            try
+            {
+                Connection.Open();
+                reader = cmdDataBase.ExecuteReader();
+                MessageBox.Show("Lasku on Poistettu");
+
+                while (reader.Read())
+                {
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            Connection.Close();
 
         }
     }

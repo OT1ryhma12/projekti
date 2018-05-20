@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace kokeilu
+namespace VillagePeople
 {
     public partial class toimipisteet_UserControl : UserControl
     {
@@ -104,6 +104,26 @@ namespace kokeilu
         private void päivitä_button_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void postinumero_label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void postinumero_textbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void postitoimipaikka_label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void puhelinnro_label_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

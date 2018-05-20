@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace kokeilu
+namespace VillagePeople
 {
     public class Varaus
     {
@@ -115,6 +115,11 @@ namespace kokeilu
             {
                 asiakas = value;
             }
+        }
+
+        public override string ToString()
+        {
+            return varaus_id.ToString();
         }
 
 
